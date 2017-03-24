@@ -11,11 +11,22 @@
         <property name="serviceInterface" value="com.janita.invoker.server.service.ICarService" />
     </bean>
 
+    <bean id="computerService" class="com.janita.invoker.server.service.impl.ComputerServiceImpl"/>
+
+    <bean id="computerServiceExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="computerService"/>
+        <property name="serviceInterface" value="com.janita.invoker.server.service.IComputerService"/>
+    </bean>
+
+
+
     <!-- 这个Bean映射了当URL是/userService时，处理器为userServiceInvoker -->
     <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
+                <!--远程访问：服务IP+PORT/服务端的servlet的pattern/服务端的项目名称/该配置中的key。调用的key决定了使用哪个方法-->
                 <prop key="/carService">carServiceExporter</prop>
+                <prop key="/computerService">computerServiceExporter</prop>
             </props>
         </property>
     </bean>
