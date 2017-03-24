@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 客户端使用 HttpInvokerProxyFactoryBean 代理客户端向服务器端发送请求，请求接口为 IUserService 的服务 -->
+    <bean id="userService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean" >
+        <!--访问路径:http://IP:PORT/serverProjectName/web.xml中的servlet过滤路径/服务端中的simpleUrlHandlerMapping配置的路径-->
+        <property name="serviceUrl" value="http://192.168.100.75:8081/web-invoker-server/c/carService"/>
+        <property name="serviceInterface" value="com.janita.invoker.server.service.ICarService" />
+    </bean>
+
+</beans>

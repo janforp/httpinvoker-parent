@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="carService" class="com.janita.invoker.server.service.impl.CarServiceImpl" />
+
+    <!-- Announce that this interface is a HTTP invoker service. -->
+    <bean id="carServiceExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="carService" />
+        <property name="serviceInterface" value="com.janita.invoker.server.service.ICarService" />
+    </bean>
+
+    <!-- 这个Bean映射了当URL是/userService时，处理器为userServiceInvoker -->
+    <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/carService">carServiceExporter</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
