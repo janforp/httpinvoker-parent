@@ -5,7 +5,7 @@ import com.abc.invoke.bean.User;
 /**
  * Created by Janita on 2017-03-23 19:35
  */
-public interface UserService {
+public interface IUserService {
 
     User getUserByName(String name);
 }

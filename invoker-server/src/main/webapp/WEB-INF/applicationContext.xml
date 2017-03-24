@@ -7,8 +7,16 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+    <bean id="userServiceImpl" class="com.abc.invoke.server.service.impl.UserServiceImpl" />
+
+    <!-- Announce that this interface is a HTTP invoker service. -->
+    <bean id="userServiceInvoker" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="userServiceImpl" />
+        <property name="serviceInterface" value="com.abc.invoke.server.service.IUserService" />
+    </bean>
+
     <!-- 这个Bean映射了当URL是/userService时，处理器为userServiceInvoker -->
-    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
                 <prop key="/userService">userServiceInvoker</prop>
@@ -16,11 +24,4 @@
         </property>
     </bean>
 
-    <!-- Announce that this interface is a HTTP invoker service. -->
-    <bean id="userServiceInvoker" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
-        <property name="service" ref="userServiceImpl" />
-        <property name="serviceInterface" value="com.abc.invoke.server.service.UserService" />
-    </bean>
-
-    <bean id="userServiceImpl" class="com.abc.invoke.server.service.UserServiceImpl" />
 </beans>
