@@ -10,8 +10,8 @@
 
     <!-- 客户端使用 HttpInvokerProxyFactoryBean 代理客户端向服务器端发送请求，请求接口为 UserService 的服务 -->
     <bean id="userService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean" >
-        <property name="serviceUrl" value="http://localhost:8080/InvokeServer/service/userService"/>
-        <property name="serviceInterface" value="com.abc.invoke.client.UserService" />
+        <property name="serviceUrl" value="http://localhost:8888/InvokeServer/service/userService"/>
+        <property name="serviceInterface" value="com.abc.invoke.client.service.UserService" />
     </bean>
 
 </beans>

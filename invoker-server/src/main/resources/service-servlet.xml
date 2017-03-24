@@ -16,11 +16,11 @@
         </property>
     </bean>
 
-    <!-- Announce that this interface is a HTTP invoker client. -->
-    <bean id="userServiceInvoker"
-          class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+    <!-- Announce that this interface is a HTTP invoker service. -->
+    <bean id="userServiceInvoker" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
         <property name="service" ref="userServiceImpl" />
         <property name="serviceInterface" value="com.abc.invoke.server.service.UserService" />
     </bean>
+
     <bean id="userServiceImpl" class="com.abc.invoke.server.service.UserServiceImpl" />
 </beans>

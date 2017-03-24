@@ -7,5 +7,5 @@ import com.abc.invoke.bean.User;
  */
 public interface UserService {
 
-    User getUserbyName(String name);
+    User getUserByName(String name);
 }
