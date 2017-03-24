@@ -20,7 +20,7 @@ public class BossServiceImpl implements IBossService{
         Boss boss = new Boss();
         boss.setBoosId(bossId);
         boss.setBossName("马云");
-
+        //远程调用
         Car car = carService.findCarById(carId);
         boss.setBossCar(car);
 

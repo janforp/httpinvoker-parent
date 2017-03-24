@@ -21,8 +21,6 @@ public class BossController {
     @RequestMapping(value = "/fetch",method = RequestMethod.GET)
     @ResponseBody
     public Boss getBoss(Long bossId,Long carId){
-        Boss boss = bossService.getBossById(bossId,carId);
-
-        return boss;
+        return bossService.getBossById(bossId,carId);
     }
 }
