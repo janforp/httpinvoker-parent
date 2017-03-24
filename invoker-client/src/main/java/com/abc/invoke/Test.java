@@ -14,7 +14,7 @@ public class Test {
 
     public static void main(String[] args) {
         ApplicationContext ac = new ClassPathXmlApplicationContext(
-                "classpath:application-context.xml");
+                "classpath:client-application-context.xml");
         UserService service = (UserService)ac.getBean("userService");
         User u = service.getUserByName("Alvis");
         System.out.println(u);
