@@ -13,7 +13,7 @@
     <!-- 客户端使用 HttpInvokerProxyFactoryBean 代理客户端向服务器端发送请求，请求接口为 IUserService 的服务 -->
     <bean id="userService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean" >
         <!--访问路径:http://IP:PORT/serverProjectName/web.xml中的servlet过滤路径/服务端中的simpleUrlHandlerMapping配置的路径-->
-        <property name="serviceUrl" value="http://192.168.100.75:8080/invoker-server/service/userService"/>
+        <property name="serviceUrl" value="http://192.168.100.75:8081/invoker-server/service/userService"/>
 
         <property name="serviceInterface" value="com.abc.invoke.client.service.IUserService" />
         <!--<property name="httpInvokerRequestExecutor" ref="httpClientRequestExecutor"/>-->
