@@ -9,6 +9,8 @@
 	<modules>
 		<module>invoker-server</module>
 		<module>invoker-client</module>
+        <module>web-invoker-server</module>
+		<module>web-invoker-client</module>
 	</modules>
 	<packaging>pom</packaging>
 

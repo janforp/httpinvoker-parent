@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="web-invoker-client:war exploded">
+    <output-path>$PROJECT_DIR$/web-invoker-client/target/web-invoker-client-0.0.1-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="web-invoker-client" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="web-invoker-server-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="web-invoker-server" />
+          </element>
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-asm:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.4.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/web-invoker-client/target/web-invoker-client-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="web-invoker-client/web/Web" />
+    </root>
+  </artifact>
+</component>
